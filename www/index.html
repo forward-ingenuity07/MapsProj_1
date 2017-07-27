@@ -50,10 +50,11 @@
                     var true2;
                     Longi = ((Math.round((position.coords.longitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
                     Latti = ((Math.round((position.coords.latitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
-                    
+                    lattit = position.coords.latitude;
+                    longit = position.coords.longitude;
                     var options = {
                         zoom: 17,
-                        center: { lat: Latti, lng: Longi }
+                        center: { lat: lattit, lng: longit }
 
                     }
 
