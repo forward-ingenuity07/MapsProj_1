@@ -33,14 +33,60 @@
         <script>
             function initMap() {
 
-                var options = {
-                    zoom: 17,
-                    center: { lat: -25.7502, lng: 28.2379 }
+                var onSuccess = function (position) {
+                    var HomLat = -25.7502 * 1;
+                    var HomLon = 28.2379 * 1;
+                    var LabLat = -25.7546 * 1;
+                    var LabLon = 28.2281 * 1;
+                    var LibLat = -25.7554 * 1;
+                    var LibLon = 28.2305 * 1;
+                    var ENG3Lat = -25.7541;
+                    var ENG3Lon = 28.2281;
+                    var Lat;
+                    var Lon;
+                    var t1;
+                    var t2;
+                    var true1;
+                    var true2;
+                    Longi = ((Math.round((position.coords.longitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
+                    Latti = ((Math.round((position.coords.latitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
+                    
+                    var options = {
+                        zoom: 17,
+                        center: { lat: Latti, lng: Longi }
 
+                    }
+
+                    var map = new google.maps.Map(document.getElementById('map'), options);
+
+                    //else if()
+                    //alert(Latsi);
+                    /*alert('Latitude: ' + position.coords.latitude + '\n' +
+                          'Longitude: ' + position.coords.longitude + '\n' +
+                          'Altitude: ' + position.coords.altitude + '\n' +
+                          'Accuracy: ' + position.coords.accuracy + '\n' +
+                          'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
+                          'Heading: ' + position.coords.heading + '\n' +
+                          'Speed: ' + position.coords.speed + '\n' +
+                          'Timestamp: ' + position.timestamp + '\n');*/
+                };
+
+                // onError Callback receives a PositionError object
+                //
+                function onError(error) {
+                    alert('code: ' + error.code + '\n' +
+                          'message: ' + error.message + '\n');
                 }
-                
-                var map = new google.maps.Map(document.getElementById('map'),options);
 
+
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+
+
+
+
+
+                
             }
 
         </script>
