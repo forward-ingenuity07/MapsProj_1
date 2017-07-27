@@ -108,4 +108,7 @@
   </platform>
   <preference name="Fullscreen" value="False" />
   <plugin name="cordova-plugin-geolocation" version="2.4.3" />
+  <plugin name="cordova-plugin-googlemaps" version="1.4.3" src="https://github.com/mapsplugin/cordova-plugin-googlemaps">
+    <variable name="API_KEY_FOR_ANDROID" value="AIzaSyC4QCeB0gxdz8N2V3SpP630TxzH-x2D7xY" />
+  </plugin>
 </widget>
