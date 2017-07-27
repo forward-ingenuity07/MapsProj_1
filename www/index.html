@@ -11,6 +11,8 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/anime.css">
+        <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
         <style>
 
             #map{
@@ -18,18 +20,38 @@
                 width:100%;
             }
             #paragraph{
-                display:inline-block;
+                
 
             }
+            #L{
+                display:inline;
+            }
+            #o{
+                display:inline;
+            }    
+            #a{
+                display:inline;
+            }    
+            #d{
+                display:inline;
+            }    
+            #i{
+                display:inline;
+            }    
+            #n,#g,#dot1,#dot2,#dot3{
+                display:inline;
+            }    
+            
         </style>
         <title>MapsProject</title>
     </head>
     <body>
-
+        
         <h1>My Google Maps Demo</h1>
-        <div id="paragraph">
-            Loading...
-        </div>
+      
+        <div id="L">L</div><div id="o">o</div><div id="a">a</div><div id="d">d</div><div id="i">i</div><div id="n">n</div><div id="g">g</div><div id="dot1">.</div><div id="dot2">.</div><div id="dot3">.</div>    
+           
+        
         <div id="map"></div>
         
         
@@ -41,35 +63,145 @@
 
                 var onSuccess = function (position) {
                    
-                    var paragraph = document.getElementById('paragraph');
-                    paragraph.setAttribute('style', 'display:none;');
-                    var HomLat = -25.7502 * 1;
-                    var HomLon = 28.2379 * 1;
-                    var LabLat = -25.7546 * 1;
-                    var LabLon = 28.2281 * 1;
-                    var LibLat = -25.7554 * 1;
-                    var LibLon = 28.2305 * 1;
-                    var ENG3Lat = -25.7541;
-                    var ENG3Lon = 28.2281;
-                    var Lat;
-                    var Lon;
-                    var t1;
-                    var t2;
-                    var true1;
-                    var true2;
-                 //   Longi = ((Math.round((position.coords.longitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
-                 //   Latti = ((Math.round((position.coords.latitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
-                    lattit = position.coords.latitude;
-                    longit = position.coords.longitude;
-                   // alert('Lattitude1: ' + Latti + ', Longitude1: ' + Longi + ', Lattitude2: ' + lattit + ', Longitude2: ' + longit);
-                    var options = {
-                        zoom: 17,
-                        center: { lat: lattit, lng: longit }
+        //            var paragraph = document.getElementById('paragraph');
+          //          paragraph.className = "animated fadeOutRight";
+     /*               var Letter_a = document.getElementById('a');
+                    var Letter_d = document.getElementById('d');
+                    var Letter_i = document.getElementById('i');
+                    var Letter_n = document.getElementById('n');
+                    var Letter_g = document.getElementById('g');
+                    var dot1 = document.getElementById('dot1');
+                    var dot2 = document.getElementById('dot2');
+                    var dot3 = document.getElementById('dot3');
+       */
+                    
+                        var Letter_dot3 = document.getElementById('dot3');
 
-                    }
+                        Letter_dot3.className = 'animated fadeOutRight';
 
-                    var map = new google.maps.Map(document.getElementById('map'), options);
 
+                    
+                    
+                    setTimeout(function () {
+                        var Letter_dot2 = document.getElementById('dot2');
+
+                        Letter_dot2.className = 'animated fadeOutRight';
+
+
+                    }, 100);
+                    setTimeout(function () {
+                        var Letter_dot1 = document.getElementById('dot1');
+
+                        Letter_dot1.className = 'animated fadeOutRight';
+
+
+                    }, 200);
+                    setTimeout(function () {
+                        var Letter_g = document.getElementById('g');
+
+                        Letter_g.className = 'animated fadeOutRight';
+
+
+                    }, 300);
+                    setTimeout(function () {
+                        var Letter_n = document.getElementById('n');
+
+                        Letter_n.className = 'animated fadeOutRight';
+
+
+                    }, 400);
+                    setTimeout(function () {
+                        var Letter_i = document.getElementById('i');
+
+                        Letter_i.className = 'animated fadeOutRight';
+
+
+                    }, 500);
+                    setTimeout(function () {
+                        var Letter_d = document.getElementById('d');
+
+                        Letter_d.className = 'animated fadeOutRight';
+
+
+                    }, 600);
+                    setTimeout(function () {
+                        var Letter_a = document.getElementById('a');
+
+                        Letter_a.className = 'animated fadeOutRight';
+
+
+                    }, 700);
+                    setTimeout(function () {
+                        var Letter_o = document.getElementById('o');
+
+                        Letter_o.className = 'animated fadeOutRight';
+
+
+                    }, 800);
+
+
+
+
+
+
+
+
+                    setTimeout(function () {
+                        var Letter_l = document.getElementById('L');
+
+
+                        Letter_l.className = 'animated fadeOutRight';
+                    }, 900);
+                    
+
+                    
+
+
+
+
+
+                    
+
+                    //    var div = document.getElementsByTagName('div');
+                    
+                    //paragraph.setAttribute('style', 'display:none;');
+                  //  div.setAttribute('style', 'display:block;')
+
+
+                    setTimeout(function () {
+
+
+                        var HomLat = -25.7502 * 1;
+                        var HomLon = 28.2379 * 1;
+                        var LabLat = -25.7546 * 1;
+                        var LabLon = 28.2281 * 1;
+                        var LibLat = -25.7554 * 1;
+                        var LibLon = 28.2305 * 1;
+                        var ENG3Lat = -25.7541;
+                        var ENG3Lon = 28.2281;
+                        var Lat;
+                        var Lon;
+                        var t1;
+                        var t2;
+                        var true1;
+                        var true2;
+                        //   Longi = ((Math.round((position.coords.longitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
+                        //   Latti = ((Math.round((position.coords.latitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
+                        lattit = position.coords.latitude;
+                        longit = position.coords.longitude;
+                        // alert('Lattitude1: ' + Latti + ', Longitude1: ' + Longi + ', Lattitude2: ' + lattit + ', Longitude2: ' + longit);
+                        var options = {
+                            zoom: 17,
+                            center: { lat: lattit, lng: longit }
+
+                        }
+
+                        var map = new google.maps.Map(document.getElementById('map'), options);
+
+
+
+                    },1000)
+                    
                     //else if()
                     //alert(Latsi);
                     /*alert('Latitude: ' + position.coords.latitude + '\n' +
