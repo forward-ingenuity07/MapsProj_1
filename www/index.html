@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+     
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <style>
+
+            #map{
+                height:400px;
+                width:100%;
+            }
+
+        </style>
+        <title>MapsProject</title>
+    </head>
+    <body>
+
+        <h1>My Google Maps Demo</h1>
+        <div id="map"></div>
+
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        
+        <script>
+            function initMap() {
+
+
+                var onSuccess = function (position) {
+                    
+                    Longi = ((Math.round((position.coords.longitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
+                    Latti = ((Math.round((position.coords.latitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
+    
+
+
+                    var options = {
+                        zoom: 17,
+                        center: { lat: Latti, lng: Longi }
+
+                    }
+
+                    var map = new google.maps.Map(document.getElementById('map'), options);
+
+
+                    //else if()
+                    //alert(Latsi);
+                    /*alert('Latitude: ' + position.coords.latitude + '\n' +
+                          'Longitude: ' + position.coords.longitude + '\n' +
+                          'Altitude: ' + position.coords.altitude + '\n' +
+                          'Accuracy: ' + position.coords.accuracy + '\n' +
+                          'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
+                          'Heading: ' + position.coords.heading + '\n' +
+                          'Speed: ' + position.coords.speed + '\n' +
+                          'Timestamp: ' + position.timestamp + '\n');*/
+                };
+
+                // onError Callback receives a PositionError object
+                //
+                function onError(error) {
+                    alert('code: ' + error.code + '\n' +
+                          'message: ' + error.message + '\n');
+                }
+
+
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+           
+
+
+
+            }
+
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4QCeB0gxdz8N2V3SpP630TxzH-x2D7xY&callback=initMap">
+        </script>
+    </body>
+</html>
