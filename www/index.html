@@ -17,7 +17,7 @@
                 height:400px;
                 width:100%;
             }
-            p{
+            #paragraph{
                 display:inline-block;
 
             }
@@ -27,8 +27,11 @@
     <body>
 
         <h1>My Google Maps Demo</h1>
+        <div id="paragraph">
+            Loading...
+        </div>
         <div id="map"></div>
-        <p>Loading...</p>
+        
         
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
@@ -37,7 +40,8 @@
             function initMap() {
 
                 var onSuccess = function (position) {
-                    var paragraph = document.getElementsByTagName('p');
+                   
+                    var paragraph = document.getElementById('paragraph');
                     paragraph.setAttribute('style', 'display:none;');
                     var HomLat = -25.7502 * 1;
                     var HomLon = 28.2379 * 1;
