@@ -168,10 +168,10 @@
                   //  div.setAttribute('style', 'display:block;')
 
 
-                    setTimeout(function () {
+                   
 
 
-                        var HomLat = -25.7502 * 1;
+                      /*  var HomLat = -25.7502 * 1;
                         var HomLon = 28.2379 * 1;
                         var LabLat = -25.7546 * 1;
                         var LabLon = 28.2281 * 1;
@@ -184,11 +184,14 @@
                         var t1;
                         var t2;
                         var true1;
-                        var true2;
+                        var true2;*/
                         //   Longi = ((Math.round((position.coords.longitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
                         //   Latti = ((Math.round((position.coords.latitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
-                        lattit = position.coords.latitude;
-                        longit = position.coords.longitude;
+
+                    setTimeout(function () {
+
+                        var lattit = position.coords.latitude;
+                        var longit = position.coords.longitude;
                         // alert('Lattitude1: ' + Latti + ', Longitude1: ' + Longi + ', Lattitude2: ' + lattit + ', Longitude2: ' + longit);
                         var options = {
                             zoom: 17,
@@ -197,10 +200,22 @@
                         }
 
                         var map = new google.maps.Map(document.getElementById('map'), options);
+                        //Add marker
+                        var Marker = new google.maps.Marker({
+                            position: { lat: lattit, lng: longit },
+                            map: map
+                        });
 
+                        //info window
 
+                        var info = new google.maps.InfoWindow({ content: '<p>You are here</p>' });
+                        Marker.addListener('click', function () {
+                            info.open(map, Marker);
 
-                    },1000)
+                        })
+
+                    }, 1500)
+
                     
                     //else if()
                     //alert(Latsi);
