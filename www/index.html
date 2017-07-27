@@ -33,47 +33,13 @@
         <script>
             function initMap() {
 
+                var options = {
+                    zoom: 17,
+                    center: { lat: -25.7502, lng: 28.2379 }
 
-                var onSuccess = function (position) {
-                    
-                    Longi = ((Math.round((position.coords.longitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
-                    Latti = ((Math.round((position.coords.latitude * Math.pow(10, 4)).toFixed(1)) / Math.pow(10, 4)).toFixed(4)) * 1;
-    
-
-
-                    var options = {
-                        zoom: 17,
-                        center: { lat: Latti, lng: Longi }
-
-                    }
-
-                    var map = new google.maps.Map(document.getElementById('map'), options);
-
-
-                    //else if()
-                    //alert(Latsi);
-                    /*alert('Latitude: ' + position.coords.latitude + '\n' +
-                          'Longitude: ' + position.coords.longitude + '\n' +
-                          'Altitude: ' + position.coords.altitude + '\n' +
-                          'Accuracy: ' + position.coords.accuracy + '\n' +
-                          'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
-                          'Heading: ' + position.coords.heading + '\n' +
-                          'Speed: ' + position.coords.speed + '\n' +
-                          'Timestamp: ' + position.timestamp + '\n');*/
-                };
-
-                // onError Callback receives a PositionError object
-                //
-                function onError(error) {
-                    alert('code: ' + error.code + '\n' +
-                          'message: ' + error.message + '\n');
                 }
-
-
-                navigator.geolocation.getCurrentPosition(onSuccess, onError);
-           
-
-
+                
+                var map = new google.maps.Map(document.getElementById('map'),options);
 
             }
 
